@@ -1,0 +1,18 @@
+{% extends "iut/main.html" %}
+{% block title %}
+{% endblock %}
+{% block content %}
+
+<a href="/IUTdeColmar/ajouttt/{{classe.id}}/"><h1 class="inscription" >Ajouter des étudiants dans la classe {{classe}}</h1></a>
+<h2> La classe : {{classe}}<br>En formation de : {{classe.formation}}<br>La moyenne de la classe est de : {{classe.nombre_etudiants}}<br>Détails sur {{classe}} : {{classe.details}} <br><br> Liste des étudiants dans la classe {{classe}} : </h2>
+{% for j in etudiant %}
+<ul class="list1">
+   <li> <h2 style="margin-bottom:13px;">{{j.nom_etudiant}}</h2>
+    {{j.nom_etudiant}} né le {{j.date_naissance}} en {{j.pays_naissance}} avec une moyenne de {{j.moyenne}}.<br><br>
+    Détails sur {{j.nom_etudiant}} :
+    {{j.details}}
+     <a href="/IUTdeColmar/deletee/{{j.id}}"><button>Effacer</button></a> <a href="/IUTdeColmar/updatee/{{j.id}}"><button>Mettre a jour</button></a></li>
+</ul>
+{% endfor %}
+
+{% endblock %}

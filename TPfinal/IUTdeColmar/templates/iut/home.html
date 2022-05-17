@@ -1,0 +1,12 @@
+{% extends "iut/main.html" %}
+{% block title %}
+{% endblock %}
+{% block content %}
+{% for l in liste %}
+
+<ul class="list1">
+     <h1 style="margin-bottom:13px;">{{l.nom_classe}}</h1>
+     <li class="list2"> La classe {{l}} a commencé l'année scolaire le {{l.date_debut|date:"d/m/Y"}}<br>{{l}} est une classe dans la formation de {{l.formation}} <a href="affiche/{{l.id}}"><button>Afficher les détails</button></a> <a href="delete/{{l.id}}"><button>Effacer</button></a> <a href="update/{{l.id}}"><button>Mettre a jour</button></a></li>
+</ul>
+{%endfor%}
+{% endblock %}

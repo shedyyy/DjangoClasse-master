@@ -1,0 +1,10 @@
+{% extends "iut/main.html" %}
+{% block title %}
+{% endblock %}
+{% block content %}
+    <form action="/IUTdeColmar/traitementt/" method="POST">
+    {% csrf_token %}
+    {{ form.as_ul }}
+    <input type="submit" value="Envoyer"/>
+    </form>
+{% endblock %}
